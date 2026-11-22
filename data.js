@@ -1153,5 +1153,14 @@ const documents = [
     "description": "PDF・資料名検索",
     "sections": [],
     "group": "技術マニュアル / 展開図"
+  },
+  {
+    "id": "daily-report",
+    "pdf": "顧客日報.pdf",
+    "title": "顧客日報",
+    "category": "教育カリキュラム",
+    "group": "教育カリキュラム",
+    "description": "PDF・資料名検索",
+    "sections": []
   }
 ];
