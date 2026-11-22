@@ -1156,7 +1156,7 @@ const documents = [
   },
   {
     "id": "daily-report",
-    "pdf": "顧客日報.pdf",
+    "pdf": "顧客日報.pdf?v=81971a4fa018",
     "title": "顧客日報",
     "category": "教育カリキュラム",
     "group": "教育カリキュラム",
