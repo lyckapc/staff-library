@@ -5,7 +5,7 @@ const folders=[...new Set(documents.flatMap(doc=>{
  return parts.map((_,index)=>parts.slice(0,index+1).join(folderSeparator));
 }))].sort((a,b)=>a.localeCompare(b,'ja'));
 const inFolder=(doc,folder)=>!folder||doc.group===folder||doc.group.startsWith(folder+' / ');
-let selected='',query='';
+let selected=null,query='';
 const el=id=>document.getElementById(id);
 const normalize=value=>value.normalize('NFKC').toLocaleLowerCase('ja');
 function renderFolders(restoreFocus){
@@ -26,22 +26,27 @@ function renderFolders(restoreFocus){
    const button=document.createElement('button');
    button.type='button';
    button.textContent=folder.split(folderSeparator).at(-1)||'すべて';
-   button.setAttribute('aria-pressed',String(folder?selected===folder||selected.startsWith(folder+folderSeparator):!selected));
+   button.setAttribute('aria-pressed',String(folder?selected===folder||selected?.startsWith(folder+folderSeparator):selected===folder));
    const count=document.createElement('small');
    count.textContent=documents.filter(doc=>inFolder(doc,folder)).length;
    button.append(count);
-   button.onclick=()=>{selected=folder;render(true)};
+   button.onclick=()=>{selected=selected===folder?null:folder;render(folder)};
    row.append(button);
-   if(restoreFocus&&selected===folder)button.focus();
+   if(restoreFocus===folder)button.focus();
   }
  }
 }
-function render(restoreFocus=false){
+function render(restoreFocus=null){
  renderFolders(restoreFocus);
  const words=normalize(query).split(/\s+/).filter(Boolean);
- const filtered=documents.filter(d=>inFolder(d,selected)&&words.every(word=>normalize(d.title+' '+d.sections.map(s=>s.lines.join(' ')).join(' ')).includes(word)));
- el('total').textContent=`収録資料 ${documents.length}件`;el('current-category').textContent=selected||'すべての資料';el('count').textContent=`${filtered.length}件${query?'（検索結果）':''}`;
+ const showResults=selected!==null||words.length>0;
+ el('total').textContent=`収録資料 ${documents.length}件`;
+ el('result-head').hidden=!showResults;
+ el('results').hidden=!showResults;
  el('results').replaceChildren();
+ if(!showResults)return;
+ const filtered=documents.filter(d=>inFolder(d,selected)&&words.every(word=>normalize(d.title+' '+d.sections.map(s=>s.lines.join(' ')).join(' ')).includes(word)));
+ el('current-category').textContent=selected||'すべての資料';el('count').textContent=`${filtered.length}件${query?'（検索結果）':''}`;
  if(!filtered.length){const box=document.createElement('div');box.className='empty';const heading=document.createElement('p');heading.textContent=query?'該当する資料がありません':'資料はまだ登録されていません';const note=document.createElement('p');note.textContent=query?'別のキーワードや分類でお探しください。':'資料を追加すると、ここに表示されます。';box.append(heading,note);el('results').append(box)}
  let previousGroup;
  filtered.sort((a,b)=>a.group.localeCompare(b.group,'ja')||a.title.localeCompare(b.title,'ja')).forEach(d=>{if(d.group!==previousGroup){const heading=document.createElement('h4');heading.className='folder-heading';heading.textContent=d.group;el('results').append(heading);previousGroup=d.group}const article=document.createElement('article');article.className='document';const content=document.createElement('div');const label=document.createElement('p');label.textContent=d.group;const title=document.createElement('h4');title.textContent=d.title;const note=document.createElement('p');note.textContent=d.description;content.append(label,title,note);const link=document.createElement('a');link.href='#document/'+d.id;link.textContent='資料を開く →';link.setAttribute('aria-label',d.title+'を開く');article.append(content,link);el('results').append(article)});
