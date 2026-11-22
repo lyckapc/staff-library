@@ -1,6 +1,6 @@
 const documents = [
   {
-    "pdf": "モデル進行表.pdf",
+    "pdf": "モデル進行表.pdf?v=c88fc172990e",
     "title": "モデル進行表",
     "category": "教育カリキュラム",
     "description": "モデル施術の進行表。表の内容はPDFで確認できます。検索対象は資料名のみです。",
