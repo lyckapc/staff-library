@@ -1,5 +1,23 @@
 const documents = [
   {
+    "id": "curriculum",
+    "html": "カリキュラム進行表.html",
+    "title": "カリキュラム進行表",
+    "category": "教育カリキュラム",
+    "group": "教育カリキュラム",
+    "description": "HTML・資料名検索",
+    "sections": []
+  },
+  {
+    "id": "lessons",
+    "html": "レッスン表.html",
+    "title": "レッスン表",
+    "category": "教育カリキュラム",
+    "group": "教育カリキュラム",
+    "description": "HTML・資料名検索",
+    "sections": []
+  },
+  {
     "pdf": "モデル進行表.pdf?v=491a7d74ff4e",
     "title": "モデル進行表",
     "category": "教育カリキュラム",

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>レッスン表</title>
+<style>
+:root{color-scheme:light;--ink:#20372f;--muted:#496159;--edge:#d6e0db;--green:#26483d}
+*{box-sizing:border-box}
+body{margin:0;background:#f5f8f6;color:var(--ink);font:1rem/1.65 "Yu Gothic","Meiryo",sans-serif}
+main{max-width:76rem;margin:auto;padding:clamp(1rem,4vw,3rem)}
+header{border-bottom:1px solid var(--edge);padding-bottom:1.1rem}
+h1{font-size:clamp(1.7rem,5vw,2.55rem);margin:0 0 .55rem;line-height:1.3}
+h2{font-size:1.35rem;margin:0 0 .55rem}
+nav{display:flex;gap:.5rem 1.25rem;flex-wrap:wrap}
+a{color:#245747;text-underline-offset:.2em}
+a:focus-visible,.table-wrap:focus-visible{outline:3px solid #467e69;outline-offset:3px}
+section{margin-top:1.65rem}
+.table-wrap{overflow-x:auto;border:1px solid var(--edge);background:white}
+table{width:100%;border-collapse:collapse;min-width:42rem}
+th,td{text-align:left;vertical-align:top;padding:.65rem .8rem;border-bottom:1px solid var(--edge)}
+th+th,th+td,td+td{border-left:1px solid var(--edge)}
+thead th{background:var(--green);color:white;white-space:nowrap}
+tbody th{font-weight:700;background:#ebf2ee}
+tbody tr:nth-child(even) td{background:#f7faf8}
+tbody tr:last-child>*{border-bottom:0}
+.curriculum tbody th{width:4.5rem;white-space:nowrap}
+.curriculum thead th:nth-child(3){width:18%;background:#365d4e}
+.lesson tbody th{width:19%}
+.lesson td:nth-child(2){min-width:5rem}
+@media print{body{background:white;font-size:10pt}main{max-width:none;padding:0}nav{display:none}section{margin-top:1rem}.table-wrap{overflow:visible}table{min-width:0}tr{break-inside:avoid}thead{display:table-header-group}thead th{print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<main class="lesson">
+<header>
+<h1>レッスン表</h1>
+<nav aria-label="表の移動"><a href="#technical">技術項目</a><a href="#service">接客項目</a><a href="カリキュラム進行表.html">カリキュラム進行表</a></nav>
+</header>
+<section aria-labelledby="technical">
+<h2 id="technical">技術項目</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-labelledby="technical">
+<table aria-labelledby="technical">
+<thead><tr><th scope="col">技術項目</th><th scope="col">タイム</th><th scope="col">行動</th><th scope="col">成果</th></tr></thead>
+<tbody><tr><th scope="row">シャンプー</th><td>１０分</td><td>眠気を誘う癒されるシャンプー</td><td>気持ち良くて寝そうだった</td></tr>
+<tr><th scope="row">ハンドブロー</th><td></td><td>熱くなく大切に扱われてると感じる<br>優しくなでるようなツヤが出るドライ</td><td>丁寧でよかった<br>ツヤツヤになった</td></tr>
+<tr><th scope="row">トリートメント</th><td>１５分</td><td>ずっと触っていたくなるような仕上り</td><td>サラサラになって嬉しい</td></tr>
+<tr><th scope="row">ヘッドスパ<br>(ヘッドマッサージ３分・１０分)</th><td>２０分</td><td>眠れずにはいられない癒しのスパ</td><td>気持ち良くて寝てしまった</td></tr>
+<tr><th scope="row">グレイカラー<br>（ショート）</th><td>１０分</td><td>タッチが優しく顔周りのが<br>しっかり染まるカラーもちの良いい塗布</td><td>丁寧でよかった</td></tr>
+<tr><th scope="row">コテ巻きチェック</th><td>１０分</td><td>トレンドに沿った人を笑顔する仕上がり</td><td>鏡を見た時可愛いが聞けた</td></tr>
+<tr><th scope="row">ファッションカラー<br>（ロング）</th><td>１５分</td><td>タッチが優しくムラなく染まる塗布<br>（１５回目以降でグレイのロング入客）</td><td>丁寧でよかった</td></tr>
+<tr><th scope="row">アイロン<br>カールアイロン</th><td>３０分</td><td>痛くなく綺麗な毛先まで艶のでる仕上り<br>ロング３０回ストレート<br>前髪ありミディアム１０回カールアイロン（３・６・１０回目でチェック）</td><td>熱くなく丁寧で痛くなかった</td></tr>
+<tr><th scope="row">ストレート塗布</th><td>１０分</td><td>素早く正確に場所により<br>塗布量を意識できた塗布</td><td>丁寧でよかった</td></tr>
+<tr><th scope="row">ウィービング</th><td>１５分</td><td>タッチが優しく正確にホイルワークでき<br>ムラなく染まる塗布</td><td>丁寧でよかった</td></tr>
+<tr><th scope="row">バレイヤージュ風</th><td>１０分</td><td>タッチが優しく正確にホイルワークでき<br>ムラなく染まる塗布　１５回</td><td>丁寧でよかった</td></tr>
+<tr><th scope="row">０テク<br>（マニキュア・ブリーチ）</th><td>３０分</td><td>根本１mm以内<br>タッチが優しくムラなく染まる塗布１５回<br>終了後ブリーチリタッチ２回<br>（毛先仕込み根本リタッチ）</td><td>丁寧でよかった</td></tr>
+<tr><th scope="row">シザーワーク</th><td></td><td>ハサミの持ち方姿勢を覚える</td><td></td></tr>
+<tr><th scope="row">ブリーチ実習</th><td>３０分</td><td>０テク後ブリーチオンカラー体験<br>（実際に調合を考える）</td><td></td></tr>
+<tr><th scope="row">TrSpaモデル</th><td>１時間</td><td>SPA 15名　TR３０名<br>仕上げ可愛く</td><td>気持ち良くて寝てしまった<br>サラサラになって嬉しい</td></tr>
+<tr><th scope="row">カラーモデル</th><td></td><td>5０名<br>１０名まで一緒に考える<br>(最初５人は知り合いトータル１０人)<br>１０名以上自分で考える(２時間半以内)<br>２０名以上(2時間以内)<br>２５名以上デザインカラー(3時間半以内)<br>３０名以上(３時間以内)<br>４０名以上全て自分で考える(自己集客のみ)</td><td>また来たいと思った<br>ミニモ☆５</td></tr>
+<tr><th scope="row">全行程チェック</th><td></td><td>価値を提供できているかチェック</td><td></td></tr>
+<tr><th scope="row">カット</th><td></td><td>素早く無駄のない施術<br>レイヤー１０分<br>ワンレン(側面チェック・イングラ)１０分<br>グラボブ(斜め・横)１５分<br>マッシュ１５分</td><td></td></tr>
+<tr><th scope="row">カットモデル</th><td>１時間</td><td>ショート３０人<br>ロング２０人</td><td>また来たいと思った<br>ミニモ☆５</td></tr>
+<tr><th scope="row">パーマ</th><td>１５分</td><td>デジタル・レイヤー・ワンレン・グラボブ</td><td></td></tr>
+<tr><th scope="row">パーマモデル</th><td>２時間半</td><td>ショート２０人<br>ロング１０人</td><td>また来たいと思った<br>ミニモ☆５</td></tr>
+<tr><th scope="row">メンズカット</th><td>１５分</td><td>素早く無駄のない施術<br>２ブロック(トップ１０分)<br>ショート(トップ１０分)</td><td></td></tr>
+<tr><th scope="row">メンズモデル</th><td>１時間</td><td>３０人</td><td>また来たいと思った<br>ミニモ☆５</td></tr>
+<tr><th scope="row">カット応用編</th><td></td><td>くびれレイヤー１０分<br>ボブから切るグラボブ１５分<br>べりーショート１５分<br>５スタイル(スタリングまで)</td><td></td></tr></tbody>
+</table>
+</div>
+</section>
+<section aria-labelledby="service">
+<h2 id="service">接客項目</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-labelledby="service">
+<table aria-labelledby="service">
+<thead><tr><th scope="col">接客項目</th><th scope="col">行動</th><th scope="col">成果</th></tr></thead>
+<tbody><tr><th scope="row">新人研修</th><td>笑顔で挨拶・自己紹介・<br>名前で呼べる・お礼が言える</td><td>雰囲気が良くて<br>いい人ばかりですね</td></tr>
+<tr><th scope="row">接客講習<br>（FBDA）</th><td>外部講習</td><td>内容を理解し行動に移せる</td></tr>
+<tr><th scope="row">受付</th><td>歓迎させているなって思える受付</td><td>優しく接してくれて<br>緊張がほぐれた</td></tr>
+<tr><th scope="row">ご案内</th><td>安心してついていける案内<br>全員が顔を見てあいさつ</td><td>歓迎されてるなって思えた</td></tr>
+<tr><th scope="row">シャンプー<br>カウンセリング</th><td>髪質やお悩みを聞き出すカウンセリング</td><td>選んでくれて嬉しかった</td></tr>
+<tr><th scope="row">TrSpa説明</th><td>仕上りに期待ができる説明<br>どんな風に良くなっていくか説明</td><td>髪が綺麗になって嬉しい</td></tr>
+<tr><th scope="row">TrSpaカウンセリング</th><td>髪質やお悩みを聞き出し提案してくれる<br>カウンセリング</td><td>親身になって<br>説明してくれた</td></tr>
+<tr><th scope="row">お客様ノート</th><td>会話の内容・髪の状態<br>施術工程・使用した薬剤とタイム</td><td>覚えててもらって嬉しい</td></tr>
+<tr><th scope="row">Tr提案</th><td>使い方の説明<br>メリット・ベネフィット</td><td>してみたくなった<br>わくわくできた</td></tr>
+<tr><th scope="row">店販提案</th><td>使い方の説明<br>メリット・ベネフィット</td><td>家でもケアしたくなった<br>綺麗になっていくのが楽しみ</td></tr>
+<tr><th scope="row">電話対応</th><td>声をワントーン高く<br>気持ちのいいやりとりができる</td><td>愛嬌があってよかった</td></tr>
+<tr><th scope="row">カラーカウンセリング</th><td>なりたいを引き出し似合うを提案</td><td>やってみたいです</td></tr>
+<tr><th scope="row">カウンセリング</th><td>なりたいを引き出し似合うを提案</td><td>やってみたいです</td></tr>
+<tr><th scope="row">次回予約<br>アフターカウンセリング</th><td>ずっと綺麗を叶える提案</td><td>また来たいと思った</td></tr></tbody>
+</table>
+</div>
+</section>
+</main>
+</body>
+</html>
