@@ -16,6 +16,7 @@ function renderFolders(restoreFocus){
  for(const parent of levels){
   const folderDepth=parent?parent.split(folderSeparator).length+1:1;
   const children=folders.filter(folder=>folder.split(folderSeparator).length===folderDepth&&(!parent||folder.startsWith(parent+folderSeparator)));
+  if(parent==='ルール')children.sort((a,b)=>Number(b==='ルール / 社員規則')-Number(a==='ルール / 社員規則'));
   if(!children.length)continue;
   const row=document.createElement('div');
   row.className=parent?'folder-row folder-row-nested':'folder-row';
